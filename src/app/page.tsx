@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
+import ProductGrid from "@/components/ProductGrid/ProductGrid";
 import styles from "./page.module.scss";
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
     <main className={styles.main}>
       <Header />
       <section className={styles.content}>
-        <h1 className={styles.text}>Hello Next!</h1>
+        <ProductGrid />
       </section>
       <Footer />
     </main>

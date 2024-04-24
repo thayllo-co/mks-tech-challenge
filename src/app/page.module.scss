@@ -1,16 +1,13 @@
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
   overflow: hidden;
 }
 
 .content {
+  display: flex;
   flex: 1;
-}
-
-.text {
-  color: $text-dark;
-  text-align: center;
+  overflow: hidden;
 }
