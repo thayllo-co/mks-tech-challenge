@@ -1,3 +1,4 @@
+import CartButton from "../CartButton/CartButton";
 import styles from "./Header.module.scss";
 
 const Header = () => {
@@ -6,6 +7,7 @@ const Header = () => {
       <h1 className={styles.title}>
         MKS <span className={styles.subtitle}>Sistemas</span>
       </h1>
+      <CartButton />
     </header>
   );
 };

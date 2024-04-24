@@ -1,9 +1,12 @@
 .header {
   background-color: $primary-color;
   height: 48px;
-  align-content: center;
   padding-left: 12px;
   padding-right: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
   .title {
     color: $text-light;
