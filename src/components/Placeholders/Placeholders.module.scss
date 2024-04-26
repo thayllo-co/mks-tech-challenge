@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+
+  .title {
+    font-weight: 500;
+    color: white;
+  }
+
+  .subtitle {
+    font-weight: 400;
+    color: white;
+  }
+
+  .error {
+    font-weight: 300;
+    color: red;
+  }
+}

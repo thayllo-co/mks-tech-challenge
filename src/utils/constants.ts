@@ -1,7 +1,7 @@
-import Product from "@/models/Product";
+import ProductObject from "@/models/ProductObject";
 
-export const cartProducts = [
-  new Product({
+export const PRODUCTS = [
+  new ProductObject({
     id: 1,
     name: "Iphone 11 128 GB",
     brand: "Apple",
@@ -13,7 +13,7 @@ export const cartProducts = [
     createdAt: "2023-10-30T16:25:01.093Z",
     updatedAt: "2023-10-30T16:25:01.093Z",
   }),
-  new Product({
+  new ProductObject({
     id: 3,
     name: "Macbook Air",
     brand: "Apple",
@@ -25,7 +25,7 @@ export const cartProducts = [
     createdAt: "2023-10-30T16:25:01.093Z",
     updatedAt: "2023-10-30T16:25:01.093Z",
   }),
-  new Product({
+  new ProductObject({
     id: 2,
     name: "AirPods",
     brand: "Apple",

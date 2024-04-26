@@ -1,4 +1,4 @@
-type ProductObject = {
+type ProductType = {
   id: number;
   name: string;
   brand: string;
@@ -9,7 +9,7 @@ type ProductObject = {
   updatedAt: string;
 };
 
-class Product {
+class ProductObject {
   id: number;
   name: string;
   brand: string;
@@ -19,7 +19,7 @@ class Product {
   createdAt: string;
   updatedAt: string;
 
-  constructor(product: ProductObject) {
+  constructor(product: ProductType) {
     const { id, name, brand, description, photo, price, createdAt, updatedAt } =
       product;
     this.id = id;
@@ -33,4 +33,4 @@ class Product {
   }
 }
 
-export default Product;
+export default ProductObject;
