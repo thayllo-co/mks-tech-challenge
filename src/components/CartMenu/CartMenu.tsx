@@ -1,18 +1,20 @@
+"use client";
+import { useCart } from "@/store/CartContext";
+import { printCart } from "@/utils/functions";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import CartProductList from "../CartProductList/CartProductList";
 import CloseButton from "../CloseButton/CloseButton";
 import styles from "./CartMenu.module.scss";
 
-type CartMenuObj = {
-  isVisible: boolean;
-  setVisibility: () => void;
-};
+const CartMenu = () => {
+  const [width, setWidth] = useState<number>(0);
 
-const CartMenu: React.FC<CartMenuObj> = ({ isVisible, setVisibility }) => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const { isMenuVisible, togleMenu, totalPrice, products, cleanCart } =
+    useCart();
 
   useEffect(() => {
+    setWidth(window.innerWidth);
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -33,10 +35,15 @@ const CartMenu: React.FC<CartMenuObj> = ({ isVisible, setVisibility }) => {
     },
   };
 
+  const handleCheckout = () => {
+    printCart(products, totalPrice);
+    cleanCart();
+  };
+
   return (
     <main className={styles.container}>
       <AnimatePresence>
-        {isVisible && (
+        {isMenuVisible && (
           <motion.aside
             className={styles.menu}
             initial="closed"
@@ -50,15 +57,18 @@ const CartMenu: React.FC<CartMenuObj> = ({ isVisible, setVisibility }) => {
                   Carrinho <br />
                   de compras
                 </h1>
-                <CloseButton onClick={setVisibility} />
+                <CloseButton onClick={togleMenu} />
               </div>
               <CartProductList />
               <div className={styles.row}>
                 <h1 className={styles.text}>Total:</h1>
-                <h1 className={styles.text}>R$798</h1>
+                <h1 className={styles.text}>
+                  R${" "}
+                  {totalPrice.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </h1>
               </div>
             </div>
-            <button className={styles.button}>
+            <button className={styles.button} onClick={handleCheckout}>
               <h1 className={styles.text}>Finalizar Compra</h1>
             </button>
           </motion.aside>

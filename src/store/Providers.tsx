@@ -1,6 +1,7 @@
 "use client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode, useState } from "react";
+import CartProvider from "./CartContext";
 import ProductsProvider from "./ProductContext";
 
 type ProvidersProps = {
@@ -21,7 +22,9 @@ const Providers = ({ children }: ProvidersProps) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ProductsProvider>{children}</ProductsProvider>
+      <ProductsProvider>
+        <CartProvider>{children}</CartProvider>
+      </ProductsProvider>
     </QueryClientProvider>
   );
 };
