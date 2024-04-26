@@ -1,0 +1,43 @@
+.quantityLabel {
+  display: none;
+  font-size: 5px;
+  color: black;
+}
+
+@media (min-width: $layout-breakpoint-lg) {
+  .quantityLabel {
+    display: block;
+  }
+}
+
+.innerContainer {
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  font-size: 8px;
+
+  height: 20px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 2px;
+
+  .buttom {
+    min-width: 16px;
+    border: none;
+    background-color: unset;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    cursor: pointer;
+    &:first-of-type {
+      padding-bottom: 2px;
+    }
+  }
+
+  .quantity {
+    min-width: 16px;
+    border-right: 1px solid #bfbfbf;
+    border-left: 1px solid #bfbfbf;
+    text-align: center;
+  }
+}
