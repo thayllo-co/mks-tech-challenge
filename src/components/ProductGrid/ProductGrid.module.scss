@@ -12,9 +12,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: '100%';
+  width: 100%;
   max-width: 1000px;
   padding-top: 8px;
-  height: min-content;
   margin: auto;
+
+  @media (min-width: $layout-breakpoint-lg) {
+    padding-top: 0px;
+  }
 }

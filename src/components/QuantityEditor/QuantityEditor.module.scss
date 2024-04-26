@@ -1,6 +1,6 @@
 .quantityLabel {
   display: none;
-  font-size: 5px;
+  font-size: 8px;
   color: black;
 }
 
@@ -13,10 +13,9 @@
 .innerContainer {
   border: 1px solid #bfbfbf;
   border-radius: 4px;
-  font-size: 8px;
-
-  height: 20px;
-  width: 50px;
+  font-size: 12px;
+  height: 30px;
+  width: 70px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -27,7 +26,7 @@
     border: none;
     background-color: unset;
     font-family: 'Montserrat';
-    font-weight: 300;
+    font-weight: 400;
     cursor: pointer;
     &:first-of-type {
       padding-bottom: 2px;
@@ -35,7 +34,7 @@
   }
 
   .quantity {
-    min-width: 16px;
+    min-width: 22px;
     border-right: 1px solid #bfbfbf;
     border-left: 1px solid #bfbfbf;
     text-align: center;
