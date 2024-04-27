@@ -41,7 +41,7 @@ const CartMenu = () => {
   };
 
   return (
-    <main className={styles.container}>
+    <main className={styles.container} data-testid="CartMenu">
       <AnimatePresence>
         {isMenuVisible && (
           <motion.aside

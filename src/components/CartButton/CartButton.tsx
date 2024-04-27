@@ -7,7 +7,11 @@ import styles from "./CartButton.module.scss";
 const CartButton = () => {
   const { togleMenu, quantity } = useCart();
   return (
-    <button className={styles.cartButton} onClick={togleMenu}>
+    <button
+      className={styles.cartButton}
+      onClick={togleMenu}
+      data-testid="CartButton"
+    >
       <Image src={cart} alt="Carrinho de compras" className={styles.cartIcon} />
       <span className={styles.cartText}>{quantity}</span>
     </button>
